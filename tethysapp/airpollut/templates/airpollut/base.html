@@ -13,16 +13,20 @@
 {% block app_title %}{{ tethys_app.name }}{% endblock %}
 
 {% block app_navigation_items %}
-  <li class="title">App Navigation</li>
-  <li class="active"><a href="">Home</a></li>
-  <li><a href="">Jobs</a></li>
-  <li><a href="">Results</a></li>
-  <li class="title">Steps</li>
-  <li><a href="">1. The First Step</a></li>
-  <li><a href="">2. The Second Step</a></li>
-  <li><a href="">3. The Third Step</a></li>
-  <li class="separator"></li>
-  <li><a href="">Get Started</a></li>
+	{% url 'airpollut:home' as home_url %}
+  	{% url 'airpollut:maps' as map_url %}
+  	{% url 'airpollut:data' as data_url %}
+  	{% url 'airpollut:proposal' as proposal_url %}
+  	{% url 'airpollut:mockup' as mockup_url %}
+  	{% url 'airpollut:about' as about_url %}
+	<li class="title">App Navigation</li>
+	<li class="{% if request.path == home_url %}active{% endif %}"><a href="{% url 'airpollut:home' %}">Home</a></li>
+	<li class="{% if request.path == proposal_url %}active{% endif %}"><a href="{% url 'airpollut:proposal' %}">Project Proposal</a></li>
+	<li class="{% if request.path == mockup_url %}active{% endif %}"><a href="{% url 'airpollut:mockup' %}">Project Mockups</a></li>
+	<li class="{% if request.path == map_url %}active{% endif %}"><a href="{% url 'airpollut:maps' %}">Map View</a></li>
+	<li class="{% if request.path == data_url %}active{% endif %}"><a href="{% url 'airpollut:data' %}">Data Services</a></li>
+	<li class="{% if request.path == about_url %}active{% endif %}"><a href="{% url 'airpollut:about' %}">About</a></li>
+
 {% endblock %}
 
 {% block app_content %}

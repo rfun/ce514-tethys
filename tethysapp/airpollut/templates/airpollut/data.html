@@ -1,0 +1,24 @@
+{% extends "airpollut/base.html" %}
+{% load tethys_gizmos %}
+
+{% block header_buttons %}
+  <div class="header-button glyphicon-button" data-toggle="tooltip" data-placement="bottom" title="Help">
+    <a data-toggle="modal" data-target="#help-modal"><span class="glyphicon glyphicon-question-sign"></span></a>
+  </div>
+{% endblock %}
+
+{% block app_content %}
+<p> The data shown on the map consists of two layers: </p>
+<ul>
+	<li>Raster Layer : <a href="http://geoserver2.byu.edu/arcgis/rest/services/Valor/FullRoadshp/FeatureServer" target="blank">DEM</a> obtained from UTAH AGR</li>
+	<li>Feature Layer : <a href="http://geoserver2.byu.edu/arcgis/rest/services/Valor/Elevations/MapServer" target="blank">Roads</a> in Utah obtained from UDOT</li>
+</ul>
+{% endblock %}
+
+{# Use the after_app_content block for modals #}
+{% block after_app_content %}
+{% endblock %}
+
+{% block app_actions %}
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "airpollut/base.html" %}
+{% load tethys_gizmos %}
+{% load staticfiles %}
+
+
+
+{% block header_buttons %}
+  <div class="header-button glyphicon-button" data-toggle="tooltip" data-placement="bottom" title="Help">
+    <a data-toggle="modal" data-target="#help-modal"><span class="glyphicon glyphicon-question-sign"></span></a>
+  </div>
+{% endblock %}
+
+{% block app_content %}
+
+
+<link rel="stylesheet" type="text/css" media="all" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css
+" />
+
+<link rel="stylesheet" href="https://js.arcgis.com/4.6/esri/css/main.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://js.arcgis.com/4.6/"></script>
+<script src="{% static 'airpollut/js/map.js' %}" type="text/javascript"></script>
+<link href="{% static 'airpollut/css/map.css' %}" rel="stylesheet"/>
+
+    <div id="map"></div>
+    <div id="footer" class="container">
+        <div class="divTable">
+            <div class="divTableBody">
+                <div class="divTableRow">
+                    <div class="divTableCell">
+                        <input type="checkbox" id="demLayer" name="demLayer" value="1" checked>
+                        <label for="demLayer">Toggle DEM Layer</label>
+                    </div>
+                    <div class="divTableCell">
+                        <input type="checkbox" id="roadsLayer" name="roadsLayer" value="1" checked>
+                        <label for="roadsLayer">Toggle Roads Layer</label>
+                    </div>
+                    <div class="divTableCell">
+                    </div>
+                </div>
+            </div>
+            <input type="button" class="right_icon" value="More Controls">
+            <div class="left_icon">
+                <div class="info">&nbsp;Info</div>
+            </div>
+        </div>
+</div>
+{% endblock %}
+
+{# Use the after_app_content block for modals #}
+{% block after_app_content %}
+{% endblock %}
+
+{% block app_actions %}
+
+{% endblock %}
