@@ -1,0 +1,46 @@
+{% extends "mapapp/base.html" %}
+{% load tethys_gizmos %}
+
+{% block header_buttons %}
+  <div class="header-button glyphicon-button" data-toggle="tooltip" data-placement="bottom" title="Help">
+    <a data-toggle="modal" data-target="#help-modal"><span class="glyphicon glyphicon-question-sign"></span></a>
+  </div>
+{% endblock %}
+
+{% block app_content %}
+ <h1>CE EN 514 - GeoSpatial Software Design</h1>
+<h2>Air Quality Prediction</h2>
+<h3>02/27/2018</h3>
+<h3>Assignment 13</h3>
+
+<ol>
+	<li>Build a new Tethys app called &quot;mapapp&quot; on your Ubuntu server, using the scaffold command.</li>
+	<li>Remove all of the default content of the app while keeping the side bar, bottom, top, and main app areas - just remove the excess HTML.</li>
+	<li>Create 4 links on the sidebar:
+	<ol>
+		<li>Home</li>
+		<li>Map View</li>
+		<li>Data Services</li>
+		<li>About</li>
+	</ol>
+	</li>
+	<li>Each of these links should open a new page in the main view.&nbsp;
+	<ol>
+		<li>Home should open a &quot;home page&quot; with the name of the class, name of your app, date, assignment number and main assignment requirements listed.</li>
+		<li>Map View should include an ArcMap Javascript API map with two data sets from your ArcMap Geoserver2 server, toggle buttons to turn off and on a raster layer and vector layer, and popup bubbles with information about the features in your map</li>
+		<li>Data Services will be a page that talks about the data services you have used in your map, how you created the data, where you are hosting the data, what data is included, and any additional data about your data. Also include a link to the geoserver2 data view page for your data.</li>
+		<li>About - the about page will include a picture of you, a link to send you an email, and a little bit about who you are.</li>
+	</ol>
+	</li>
+	<li>Submit a document with screenshots showing all required elements running on your computer.</li>
+	<li>Be prepared to do a quick 2 minute demo of your app in class on Tuesday.&nbsp;</li>
+</ol>
+{% endblock %}
+
+{# Use the after_app_content block for modals #}
+{% block after_app_content %}
+{% endblock %}
+
+{% block app_actions %}
+
+{% endblock %}

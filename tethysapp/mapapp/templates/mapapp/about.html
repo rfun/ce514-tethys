@@ -1,0 +1,27 @@
+{% extends "mapapp/base.html" %}
+{% load tethys_gizmos %}
+
+{% block header_buttons %}
+  <div class="header-button glyphicon-button" data-toggle="tooltip" data-placement="bottom" title="Help">
+    <a data-toggle="modal" data-target="#help-modal"><span class="glyphicon glyphicon-question-sign"></span></a>
+  </div>
+{% endblock %}
+
+{% block app_content %}
+ 
+
+<img src="https://pbs.twimg.com/profile_images/851162421699911681/q8OCY51h_400x400.jpg"/>
+
+<p>I am a PhD candidate in the department of Civil Engineering. I love and live to code.</p>
+<p>You can email me at rohit@byu.net</p>
+
+
+{% endblock %}
+
+{# Use the after_app_content block for modals #}
+{% block after_app_content %}
+{% endblock %}
+
+{% block app_actions %}
+
+{% endblock %}
