@@ -48,9 +48,11 @@ require([
             map: map
         });
 
+        $('input[id=demLayer]').on('switchChange.bootstrapSwitch', function (event, state) { dem.visible = demLayerBox.checked; });
+        $('input[id=roadsLayer]').on('switchChange.bootstrapSwitch', function (event, state) { roadsLayer.visible = roadsLayerBox.checked; });
 
-        on(dom.byId("demLayer"), "change", function() { dem.visible = demLayerBox.checked; });
-        on(dom.byId("roadsLayer"), "change", function() { roadsLayer.visible = roadsLayerBox.checked; });
+        // on(dom.byId("demLayer"), "change", function() { dem.visible = demLayerBox.checked; });
+        // on(dom.byId("roadsLayer"), "change", function() { roadsLayer.visible = roadsLayerBox.checked; });
 
 
     });
