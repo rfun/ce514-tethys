@@ -49,6 +49,16 @@ class Airpollut(TethysAppBase):
                 name='proposal',
                 url='airpollut/proposal',
                 controller='airpollut.controllers.proposal'
+            ),
+            UrlMap(
+                name='pollution',
+                url='airpollut/pollution',
+                controller='airpollut.controllers.pollution'
+            ),
+            UrlMap(
+                name='watershed',
+                url='airpollut/watershed',
+                controller='airpollut.controllers.watershed'
             )
         )
 

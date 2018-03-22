@@ -1,0 +1,32 @@
+{% extends "airpollut/base.html" %}
+{% load tethys_gizmos %}
+{% load staticfiles %}
+
+{% block title %}{{ block.super }} - Map View{% endblock %}
+
+{% block scripts %}
+{{ block.super }}
+<script src="https://js.arcgis.com/4.6/"></script>
+<script src="{% static 'airpollut/js/map-ws.js' %}" type="text/javascript"></script>
+{% endblock %}
+
+
+{% block header_buttons %}
+{% endblock %}
+
+{% block styles %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" media="all" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css
+    " />
+    <link rel="stylesheet" href="https://js.arcgis.com/4.6/esri/css/main.css">
+    <link href="{% static 'airpollut/css/map.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+{% block app_content %}
+<div id="map"></div>
+{% endblock %}
+
+{% block app_actions %}
+<p>Click on the map within the window to get the watershed. </p>
+{% endblock %}
+

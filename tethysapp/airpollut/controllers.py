@@ -57,6 +57,14 @@ def mockup(request):
     context = {}
     return render(request, 'airpollut/mockup.html', context)
 
+def pollution(request):
+    context = {}
+    return render(request, 'airpollut/pollution.html', context)
+
+def watershed(request):
+    context = {}
+    return render(request, 'airpollut/watershed.html', context)
+
 
 def proposal(request):
     context = {}

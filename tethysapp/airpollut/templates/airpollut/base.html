@@ -15,6 +15,8 @@
 {% block app_navigation_items %}
 	{% url 'airpollut:home' as home_url %}
   	{% url 'airpollut:maps' as map_url %}
+    {% url 'airpollut:pollution' as pollution_url %}
+    {% url 'airpollut:watershed' as ws_url %}
   	{% url 'airpollut:data' as data_url %}
   	{% url 'airpollut:proposal' as proposal_url %}
   	{% url 'airpollut:mockup' as mockup_url %}
@@ -24,9 +26,14 @@
 	<li class="{% if request.path == proposal_url %}active{% endif %}"><a href="{% url 'airpollut:proposal' %}">Project Proposal</a></li>
 	<li class="{% if request.path == mockup_url %}active{% endif %}"><a href="{% url 'airpollut:mockup' %}">Project Mockups</a></li>
 	<li class="{% if request.path == map_url %}active{% endif %}"><a href="{% url 'airpollut:maps' %}">Map View</a></li>
-	<li class="{% if request.path == data_url %}active{% endif %}"><a href="{% url 'airpollut:data' %}">Data Services</a></li>
-	<li class="{% if request.path == about_url %}active{% endif %}"><a href="{% url 'airpollut:about' %}">About</a></li>
+  <li class="{% if request.path == data_url %}active{% endif %}"><a href="{% url 'airpollut:data' %}">Data Services</a></li>
+  <li class="{% if request.path == about_url %}active{% endif %}"><a href="{% url 'airpollut:about' %}">About</a></li>
 
+  <li class="title">Geoprocessing Services</li>
+  <li class="{% if request.path == pollution_url %}active{% endif %}"><a href="{% url 'airpollut:pollution' %}">Pollution Tool</a></li>
+  <li class="{% if request.path == ws_url %}active{% endif %}"><a href="{% url 'airpollut:watershed' %}">Watershed Tool</a></li>
+  
+	
 {% endblock %}
 
 {% block app_content %}
